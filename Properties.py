@@ -76,7 +76,7 @@ class Properties:
         return False
 
     def seven(self):
-        return self.produtoMisto
+        return abs(self.produtoMisto)
 
     def eight(self):
         if(self.produtoMisto > 0): return 'Base Positiva'

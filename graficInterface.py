@@ -51,12 +51,13 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         def create_vetor():
-            u = Arrays3D(int(v11e.get()), int(v12e.get()), int(v13e.get())).array
+            u = Arrays3D(float(v11e.get()), float(v12e.get()), float(v13e.get())).array
             print(u)
-            v = Arrays3D(int(v21e.get()), int(v22e.get()), int(v23e.get())).array
+            v = Arrays3D(float(v21e.get()), float(v22e.get()), float(v23e.get())).array
             print(v)
-            w = Arrays3D(int(v31e.get()), int(v32e.get()), int(v33e.get())).array
+            w = Arrays3D(float(v31e.get()), float(v32e.get()), float(v33e.get())).array
             print(w)
+            print(Properties(u,v,w).setProdutoMisto())
 
             window = Window(self,u,v,w)
             window.grab_set()
