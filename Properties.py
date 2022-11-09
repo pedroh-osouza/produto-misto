@@ -79,6 +79,5 @@ class Properties:
         return self.produtoMisto
 
     def eight(self):
-        print(self.produtoMisto)
         if(self.produtoMisto > 0): return 'Base Positiva'
         return 'Base Negativa'
