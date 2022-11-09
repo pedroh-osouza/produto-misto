@@ -6,29 +6,34 @@ class Properties:
         self.vetor1 = vetor1
         self.vetor2 = vetor2
         self.vetor3 = vetor3
+        self.produtoMisto = self.setProdutoMisto()
     
+    def setProdutoMisto(self):
+
+        produtoVetorial = np.cross(self.vetor1, self.vetor2)
+
+        produtoMisto = np.dot(produtoVetorial, self.vetor3)
+
+        return produtoMisto
+
     def one(self):
         matriz = np.array([self.vetor1, self.vetor2, self.vetor3])
-        determinante = np.linalg.det(matriz)
-        
-        produtoMisto = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3)
-        
-        if(produtoMisto == determinante): return True
+        determinante = round(np.linalg.det(matriz), 1)
+
+        if(self.produtoMisto == determinante): return True
         return False
 
     def two(self):
         ld = False
         li = False
 
-        produtoMisto = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3)
-
         matriz = np.array([self.vetor1, self.vetor2, self.vetor3])
         determinante = np.linalg.det(matriz)
         if(determinante == 0): ld = True
         if(determinante != 0): li = True
 
-        if(ld == True and determinante == 0): return True
-        if(li == True and determinante != 0): return True
+        if(ld == True and determinante == 0 and self.produtoMisto == 0): return True
+        if(li == True and determinante != 0 and self.produtoMisto != 0): return True
         return False
 
     def three(self):
@@ -51,19 +56,30 @@ class Properties:
         a = randint(0, 9)
         b = randint(0, 9)
         c = randint(0, 9)
-        
 
-        print(a)
-        print(self.vetor1)
-        print(a * self.vetor1)
+        produtoMisto1 = np.dot(np.cross((a*self.vetor1), (b*self.vetor2)), (c*self.vetor3))
+        produtoMisto2 = a * b * c * (np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3))
 
-        # produtoMisto1 = np.dot(np.cross((a*self.vetor1), (b*self.vetor2)), (c*self.vetor3))
+        if(produtoMisto1 == produtoMisto2): return True
+        return False
 
-        # produtoMisto2 = a * b * c * (np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3))
-
-        # print(produtoMisto1)
     def six(self):
-        print(self.vetor)
+
+        #Vetor 1
+        produtoMisto1 = np.dot(np.cross(self.vetor1 * 2, self.vetor2), self.vetor3)
+        produtoMisto2 = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3) * 2
+
+        #Vetor 2
+        produtoMisto3 = np.dot(np.cross(self.vetor1, self.vetor2 * 2), self.vetor3)
+        produtoMisto4 = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3) * 2
+
+        #Vetor 2
+        produtoMisto5 = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3 * 2)
+        produtoMisto6 = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3) * 2
+
+        if((produtoMisto1 == produtoMisto2) and (produtoMisto3 == produtoMisto4) and (produtoMisto5 == produtoMisto6)): return True
+        return False
+
     def seven(self):
         print(self.vetor)
     def eight(self):
