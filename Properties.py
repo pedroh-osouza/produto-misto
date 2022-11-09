@@ -9,7 +9,6 @@ class Properties:
         self.produtoMisto = self.setProdutoMisto()
     
     def setProdutoMisto(self):
-
         produtoVetorial = np.cross(self.vetor1, self.vetor2)
 
         produtoMisto = np.dot(produtoVetorial, self.vetor3)
@@ -37,19 +36,16 @@ class Properties:
         return False
 
     def three(self):
-        produtoMisto1 = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3)
+        produtoMistoInverso = - (np.dot(np.cross(self.vetor2, self.vetor1), self.vetor3))
 
-        produtoMisto2 = - (np.dot(np.cross(self.vetor2, self.vetor1), self.vetor3))
-
-        if(produtoMisto1 == produtoMisto2): return True
+        if(self.produtoMisto == produtoMistoInverso): return True
         return False
 
     def four(self):
-        produtoMisto1 = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3)
-        produtoMisto2 = np.dot(np.cross(self.vetor3, self.vetor1), self.vetor2)
-        produtoMisto3 = np.dot(np.cross(self.vetor2, self.vetor3), self.vetor1)
+        produtoMisto312 = np.dot(np.cross(self.vetor3, self.vetor1), self.vetor2)
+        produtoMisto312 = np.dot(np.cross(self.vetor2, self.vetor3), self.vetor1)
 
-        if(produtoMisto1 == produtoMisto2 == produtoMisto3): return True
+        if(self.produtoMisto == produtoMisto312 == produtoMisto312): return True
         return False
 
     def five(self):
@@ -64,7 +60,6 @@ class Properties:
         return False
 
     def six(self):
-
         #Vetor 1
         produtoMisto1 = np.dot(np.cross(self.vetor1 * 2, self.vetor2), self.vetor3)
         produtoMisto2 = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3) * 2
@@ -81,6 +76,8 @@ class Properties:
         return False
 
     def seven(self):
-        print(self.vetor)
+        return self.produtoMisto
+
     def eight(self):
-        print(self.vetor)
+        if(self.produtoMisto > 0): return 'Base Positiva'
+        return 'Base Negativa'
