@@ -1,5 +1,4 @@
 import tkinter as tk
-import tkinter as ttk
 from tkinter import messagebox
 from Properties import Properties
 from Arrays3D import Arrays3D
