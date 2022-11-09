@@ -21,12 +21,14 @@ class Window(tk.Toplevel):
         def six(): 
             messagebox.showinfo("Propriedade 6",Properties(u,v,w).six()) 
         def seven(): 
-            messagebox.showinfo("Propriedade 7",Properties(u,v,w).seven()) 
+            messagebox.showinfo("Propriedade 7",str(Properties(u,v,w).seven())) 
         def eigth(): 
             messagebox.showinfo("Propriedade 8",Properties(u,v,w).eight()) 
+        def nine(): 
+            messagebox.showinfo("Definição",'O produto misto dos vetores u, v, w (nesta ordem é o número real [u, v, w] = u ^ v * w).') 
             
 
-        self.geometry('300x180')
+        self.geometry('450x170')
         self.title(' Selecione a Propriedade:')
         create_vet1 = tk.Button(self,text='Propriedade um: ', command= one)
         create_vet1.grid(row=1, column=0, padx=10, pady=10)
@@ -35,15 +37,17 @@ class Window(tk.Toplevel):
         create_vet3 = tk.Button(self, text='Propriedade três:', command= three)
         create_vet3.grid(row=3, column=0, padx=10, pady=10)
         create_vet4 = tk.Button(self, text='Propriedade quatro: ', command= four)
-        create_vet4.grid(row=4, column=0, padx=10, pady=10)
+        create_vet4.grid(row=1, column=1, padx=10, pady=10)
         create_vet5 = tk.Button(self,text='Propriedade cinco: ', command= five) 
-        create_vet5.grid(row=1, column=1, padx=10, pady=10)
+        create_vet5.grid(row=2, column=1, padx=10, pady=10)
         create_vet6 = tk.Button(self,text='Propriedade seis:', command=six)
-        create_vet6.grid(row=2, column=1, padx=10, pady=10)
+        create_vet6.grid(row=3, column=1, padx=10, pady=10)
         create_vet7 = tk.Button(self,text='Propriedade sete:', command=seven)
-        create_vet7.grid(row=3, column=1, padx=10, pady=10)
+        create_vet7.grid(row=1, column=2, padx=10, pady=10)
         create_vet8 = tk.Button(self, text='Propriedade oito: ', command=eigth)
-        create_vet8.grid(row=4, column=1, padx=10, pady=10)
+        create_vet8.grid(row=2, column=2, padx=10, pady=10)
+        create_vet9 = tk.Button(self, text='Definição Produto Misto: ', command=nine)
+        create_vet9.grid(row=3, column=2, padx=10, pady=10)
 
 
 class App(tk.Tk):

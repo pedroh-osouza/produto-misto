@@ -15,14 +15,14 @@ class Properties:
 
         return produtoMisto
 
-    def one(self):
+    def one(self): # produto misto é o valor de (u.v).w, esse valor é igual a determiante da sua  matriz
         matriz = np.array([self.vetor1, self.vetor2, self.vetor3])
         determinante = round(np.linalg.det(matriz), 1)
 
         if(self.produtoMisto == determinante): return True
         return False
 
-    def two(self):
+    def two(self): # (u.v).w é igual a 0 se e somente se for linearmente dependente.
         ld = False
         li = False
 
@@ -31,24 +31,24 @@ class Properties:
         if(determinante == 0): ld = True
         if(determinante != 0): li = True
 
-        if(ld == True and determinante == 0 and self.produtoMisto == 0): return True
-        if(li == True and determinante != 0 and self.produtoMisto != 0): return True
+        if(ld == True and determinante == 0 and self.produtoMisto == 0): return "Linearmente Dependente"
+        if(li == True and determinante != 0 and self.produtoMisto != 0): return "Linearmente Independente"
         return False
 
-    def three(self):
+    def three(self): #
         produtoMistoInverso = - (np.dot(np.cross(self.vetor2, self.vetor1), self.vetor3))
 
         if(self.produtoMisto == produtoMistoInverso): return True
         return False
 
-    def four(self):
+    def four(self): # SE PRODUTO VETORILA DE (U.V).W É IGUAL DE (W.U).V POR EXEMPLO.
         produtoMisto312 = np.dot(np.cross(self.vetor3, self.vetor1), self.vetor2)
         produtoMisto312 = np.dot(np.cross(self.vetor2, self.vetor3), self.vetor1)
 
         if(self.produtoMisto == produtoMisto312 == produtoMisto312): return True
         return False
 
-    def five(self):
+    def five(self): #
         a = randint(0, 9)
         b = randint(0, 9)
         c = randint(0, 9)
@@ -59,7 +59,7 @@ class Properties:
         if(produtoMisto1 == produtoMisto2): return True
         return False
 
-    def six(self):
+    def six(self): # O PRODDUTO MISTO DE (U+U.V).W É = A (U.V).W.2
         #Vetor 1
         produtoMisto1 = np.dot(np.cross(self.vetor1 * 2, self.vetor2), self.vetor3)
         produtoMisto2 = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3) * 2
