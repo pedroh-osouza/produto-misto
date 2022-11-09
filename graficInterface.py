@@ -26,7 +26,6 @@ class Window(tk.Toplevel):
         def nine(): 
             messagebox.showinfo("Definição",'O produto misto dos vetores u, v, w (nesta ordem é o número real [u, v, w] = u ^ v * w).') 
             
-
         self.geometry('450x170')
         self.title(' Selecione a Propriedade:')
         create_vet1 = tk.Button(self,text='Propriedade um: ', command= one)
@@ -48,7 +47,6 @@ class Window(tk.Toplevel):
         create_vet9 = tk.Button(self, text='Definição Produto Misto: ', command=nine)
         create_vet9.grid(row=3, column=2, padx=10, pady=10)
 
-
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -62,7 +60,6 @@ class App(tk.Tk):
 
             window = Window(self,u,v,w)
             window.grab_set()
-
 
         self.geometry('500x600')
         self.title('Produto Misto')
@@ -119,8 +116,6 @@ class App(tk.Tk):
         ############################################################    
         create_vet = tk.Button(text='Cadastrar Vetores', command=create_vetor)
         create_vet.grid(row=12, column=1, padx=10, pady=10)
-   
-
 
 if __name__ == "__main__":
     app = App()
