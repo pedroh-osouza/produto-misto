@@ -43,7 +43,7 @@ class Properties:
 
     def four(self): # SE PRODUTO VETORILA DE (U.V).W É IGUAL DE (W.U).V POR EXEMPLO.
         produtoMisto312 = np.dot(np.cross(self.vetor3, self.vetor1), self.vetor2)
-        produtoMisto312 = np.dot(np.cross(self.vetor2, self.vetor3), self.vetor1)
+        produtoMisto231 = np.dot(np.cross(self.vetor2, self.vetor3), self.vetor1)
 
         if(self.produtoMisto == produtoMisto312 == produtoMisto312): return True
         return False
