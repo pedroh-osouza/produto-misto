@@ -6,3 +6,5 @@ print('base: ortonormal, ortogonal ')
 
 print('Dependencia e Independencia linear')
 print('produto vetorial x produto escalar')
+
+print('vetores representantes')
