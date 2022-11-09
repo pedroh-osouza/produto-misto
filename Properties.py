@@ -27,15 +27,13 @@ class Properties:
         ld = False
         li = False
 
-        produtoMisto = np.dot(np.cross(self.vetor1, self.vetor2), self.vetor3)
-
         matriz = np.array([self.vetor1, self.vetor2, self.vetor3])
         determinante = np.linalg.det(matriz)
         if(determinante == 0): ld = True
         if(determinante != 0): li = True
 
-        if(ld == True and determinante == 0 and produtoMisto == 0): return True
-        if(li == True and determinante != 0 and produtoMisto != 0): return True
+        if(ld == True and determinante == 0 and self.produtoMisto == 0): return True
+        if(li == True and determinante != 0 and self.produtoMisto != 0): return True
         return False
 
     def three(self):
