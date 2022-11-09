@@ -1,10 +1,7 @@
-print('O produto misto dos vetores u, v, w (nesta ordem é o número real [u, v, w] = u ^ v * w).')
+import numpy as np
+from random import randint
 
-print('Observemos que a única maneira de efeturar esse produto é calculando u^v e, entao, o produto escalar de u^v por w')
 
-print('base: ortonormal, ortogonal ')
+def definicao(x):
 
-print('Dependencia e Independencia linear')
-print('produto vetorial x produto escalar')
-
-print('vetores representantes')
+    return print('O produto misto dos vetores u, v, w (nesta ordem é o número real [u, v, w] = u ^ v * w). Observemos que a única maneira de efeturar esse produto é calculando u^v e, entao, o produto escalar por w, não sendo necessárrio o use de parênteses na definição do produto misto.')
